@@ -1,54 +1,34 @@
 
 import './App.css';
 import { useState } from "react";
+import Page1 from './components/Page1';
+import Page2 from './components/Page2';
+import Task2 from './components/Task2';
+import {  useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AllRoutes from './components/AllRoutes';
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [countryCode, setCountryCode] = useState('');
-  const [errors, setErrors] = useState({ email: '', mobile: '', countryCode: '' });
+  const [formData, setFormData] = useState(null);
+
+  const navigate = useNavigate()
+
+  
+
+  const handleClick = () =>{
+    return navigate("/task2")
+  }
   return (
     <div className="App">
-
-<div className="maindiv">
-        <div className="leftdiv">
-          image
-        </div>
-        <div className="rightdiv">
-          <img src="" alt="logo"/>
-          <h2>Get a FREE</h2>
-          <h5>Consultation with an expert</h5>
-          <br/>
-          <form onSubmit={handlesubmit}>
-            <input type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          required/>
-          <br/><br/>
-          <select
-          value={countryCode}
-          onChange={(e) => setCountryCode(e.target.value)}
-          required
-        >
-          <option value="">+91</option>
-          <option value="+1">+1</option>
-          <option value="+91">+91</option>
-          {/* Add more country codes as needed */}
-        </select>
-          <input type="tel"
-          pattern="[0-9]{10}"
-          value={mobile}
-          onChange={(e) => setMobile(e.target.value)}
-          required/>
-
-            </form>
-        </div>
-        </div>
-
-      
+      <button onClick={handleClick}>click for task 2</button>
+      <AllRoutes></AllRoutes>
+      {/* {!formData ? (
+        <Page1 onSubmit={handleSubmit} />
+      ) : (
+        <Page2 data={formData} />
+      )} */}
     </div>
-  );
-}
+    );
+    }
 
-export default App;
+  export default App;
