@@ -14,7 +14,7 @@ const Task2 = () => {
                 setalldata(data)
 
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error => console.error('Error', error));
     }, []);
     return (
         <div>
@@ -33,8 +33,6 @@ const Task2 = () => {
                         </>
                     )}
 
-                    {/* <Set2
-           adres={user.address} /> */}
                     <Set3 email={user.email} name={user.name} />
                     <Set4 city={user.address.city} zipcode={user.address.zipcode} geo={user.address.geo} />
 
@@ -45,20 +43,6 @@ const Task2 = () => {
     )
 }
 
-// function Set2({ adres }) {
-//     return (
-//       <div>
-//         <h3>Address Details</h3>
-//         <ul>
-//           {Object.keys(adres).map((key, index) => (
-//             <li key={index}>
-//               {key}: {adres[key]}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     );
-//   }
 function Set3({ email, name }) {
     if (email.endsWith('.biz')) {
         return (

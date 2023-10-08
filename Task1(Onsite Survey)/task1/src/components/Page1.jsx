@@ -37,10 +37,10 @@ const Page1 = () => {
         <>
             <div className="maindiv">
                 <div className="leftdiv">
-                    <img src="../images/image1.png" alt="yellow" style={{ width: "70%" }} />
+                    <img src="../images/image1.PNG" alt="yellow" style={{ width: "70%" }} />
                 </div>
                 <div className="rightdiv">
-                    <img src="../images/logo.png" alt="logo" />
+                    <img src="../images/logo.PNG" alt="logo" />
                     <h1>Get a FREE</h1>
                     <h3>Consultation with an expert</h3>
                     <br />
